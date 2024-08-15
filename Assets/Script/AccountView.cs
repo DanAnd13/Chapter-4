@@ -5,26 +5,27 @@ using UnityEngine.UI;
 
 public class AccountView : MonoBehaviour
 {
-    public ScrollRect scrollRect; // Посилання на ScrollRect
-    public Button scrollToLeft; // Кнопка для переміщення до верху
-    public Button scrollToRight; // Кнопка для переміщення до низу
+    public ScrollRect scrollRect;
+    public Button scrollToLeft;
+    public Button scrollToRight;
+    public Canvas mainMenuCanvas;
+    public Canvas accountSettingsCanvas;
 
-    void Start()
+    private void Start()
     {
-        // Прив'язуємо методи до натискання на кнопки
         scrollToRight.onClick.AddListener(ScrollToRight);
         scrollToLeft.onClick.AddListener(ScrollToLeft);
     }
-
-    // Метод для переміщення до верху
-    void ScrollToRight()
+   private void ScrollToRight()
     {
+        mainMenuCanvas.sortingOrder = 0;
+        accountSettingsCanvas.sortingOrder = 1;
         scrollRect.horizontalNormalizedPosition = 0f;
     }
-
-    // Метод для переміщення до низу
-    void ScrollToLeft()
+   private void ScrollToLeft()
     {
+        mainMenuCanvas.sortingOrder = 1;
+        accountSettingsCanvas.sortingOrder = 0;
         scrollRect.horizontalNormalizedPosition = 1f;
     }
 }
