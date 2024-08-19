@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class OpenScreenshotsInRealSize : MonoBehaviour, IPointerClickHandler
 {
     public Canvas zoomCanvas;
-    public Canvas mainCanvas;
     public Image zoomedImage;
 
     public void OnPointerClick(PointerEventData eventData)
@@ -16,7 +15,6 @@ public class OpenScreenshotsInRealSize : MonoBehaviour, IPointerClickHandler
 
         if (img != null)
         {
-            mainCanvas.gameObject.SetActive(false);
             zoomCanvas.gameObject.SetActive(true);
 
             zoomedImage.sprite = img.sprite;
@@ -24,7 +22,6 @@ public class OpenScreenshotsInRealSize : MonoBehaviour, IPointerClickHandler
     }
     public void OnCloseZoomCanvas()
     {
-        mainCanvas.gameObject.SetActive(true);
         zoomCanvas.gameObject.SetActive(false);
     }
 }

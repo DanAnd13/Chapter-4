@@ -1,48 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SafeArea : MonoBehaviour
 {
-    public Canvas _canvas;
-    private RectTransform _panelSafeArea;
-    private Rect _currentSafeArea = new Rect();
-    private ScreenOrientation _currentOrientation = ScreenOrientation.AutoRotation;
-    void Start()
+    private RectTransform rectTransform;
+
+    void Awake()
     {
-        _panelSafeArea = GetComponent<RectTransform>();
-
-        _currentOrientation = Screen.orientation;
-        _currentSafeArea = Screen.safeArea;
-
+        rectTransform = GetComponent<RectTransform>();
         ApplySafeArea();
     }
-    private void Update()
+
+    void ApplySafeArea()
     {
-        if ((_currentOrientation != Screen.orientation) || (_currentSafeArea != Screen.safeArea))
-        {
-            ApplySafeArea();
-        }
-    }
-    private void ApplySafeArea()
-    {
-        if(_panelSafeArea == null)
-        {
-            return;
-        }
         Rect safeArea = Screen.safeArea;
         Vector2 anchorMin = safeArea.position;
         Vector2 anchorMax = safeArea.position + safeArea.size;
-        anchorMax.x /= _canvas.pixelRect.width;
-        anchorMin.y /= _canvas.pixelRect.height;
 
-        anchorMax.x /= _canvas.pixelRect.width;
-        anchorMax.y /= _canvas.pixelRect.height;
+        anchorMin.x /= Screen.width;
+        anchorMin.y /= Screen.height;
+        anchorMax.x /= Screen.width;
+        anchorMax.y /= Screen.height;
 
-        _panelSafeArea.anchorMin = anchorMin;
-        _panelSafeArea.anchorMax = anchorMax;
-
-        _currentOrientation = Screen.orientation;
-        _currentSafeArea = Screen.safeArea;
+        rectTransform.anchorMin = anchorMin;
+        rectTransform.anchorMax = anchorMax;
     }
 }
