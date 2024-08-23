@@ -9,6 +9,10 @@ public class LoadAccountIcon : MonoBehaviour
     private Sprite _accountPicture;
     private void Awake()
     {
+        LoadIcon();
+    }
+    private void LoadIcon()
+    {
         _accountPicture = Resources.Load<Sprite>("User_Icon");
         accountIcon.sprite = _accountPicture;
     }

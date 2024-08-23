@@ -15,13 +15,18 @@ public class OpenScreenshotsInRealSize : MonoBehaviour, IPointerClickHandler
 
         if (img != null)
         {
-            zoomCanvas.gameObject.SetActive(true);
-
-            zoomedImage.sprite = img.sprite;
+            OpenZoom(img);
         }
     }
     public void OnCloseZoomCanvas()
     {
         zoomCanvas.gameObject.SetActive(false);
     }
+    private void OpenZoom(Image screeenshot)
+    {
+        zoomCanvas.gameObject.SetActive(true);
+
+        zoomedImage.sprite = screeenshot.sprite;
+    }
+    
 }

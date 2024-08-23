@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class SafeArea : MonoBehaviour
 {
-    private RectTransform rectTransform;
+    private RectTransform _rectTransform;
 
     void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
+        _rectTransform = GetComponent<RectTransform>();
         ApplySafeArea();
     }
 
@@ -21,7 +21,7 @@ public class SafeArea : MonoBehaviour
         anchorMax.x /= Screen.width;
         anchorMax.y /= Screen.height;
 
-        rectTransform.anchorMin = anchorMin;
-        rectTransform.anchorMax = anchorMax;
+        _rectTransform.anchorMin = anchorMin;
+        _rectTransform.anchorMax = anchorMax;
     }
 }

@@ -14,9 +14,18 @@ public class VideoStreamPlayer : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        PrepareVideo();
+        PlayOrPauseVideo();
+        
+    }
+    private void PrepareVideo()
+    {
         rawImage.gameObject.SetActive(true);
         videoPlayer.prepareCompleted += OnVideoPrepared;
         videoPlayer.Prepare();
+    }
+    private void PlayOrPauseVideo()
+    {
         if (videoPlayer.isPlaying)
         {
             videoPlayer.Pause();
@@ -26,7 +35,7 @@ public class VideoStreamPlayer : MonoBehaviour, IPointerClickHandler
             videoPlayer.Play();
         }
     }
-    void OnVideoPrepared(VideoPlayer vp)
+    private void OnVideoPrepared(VideoPlayer vp)
     {
         rawImage.texture = vp.texture;
         vp.Play();
