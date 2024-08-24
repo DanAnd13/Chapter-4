@@ -13,7 +13,7 @@ public class LoadAccountIcon : MonoBehaviour
     }
     private void LoadIcon()
     {
-        _accountPicture = Resources.Load<Sprite>("User_Icon");
+        _accountPicture = Resources.Load<Sprite>("Icon/User_Icon");
         accountIcon.sprite = _accountPicture;
     }
 }

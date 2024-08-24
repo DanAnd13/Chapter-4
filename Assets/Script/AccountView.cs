@@ -29,12 +29,15 @@ public class AccountView : MonoBehaviour
     {
         mainMenuCanvas.sortingOrder = 0;
         accountSettingsCanvas.sortingOrder = 1;
+        scrollRect.vertical = true;
+        scrollRect.horizontal = true;
         while (scrollRect.horizontalNormalizedPosition > 0)
         {
             scrollRect.horizontalNormalizedPosition -= 0.05f;
             _lowerCanvasGroup.alpha -= 0.01f;
             yield return null;
         }
+        scrollRect.horizontal = false;
     }
    private void ScrollToLeft()
     {
@@ -42,6 +45,8 @@ public class AccountView : MonoBehaviour
     }
     private IEnumerator ScrollToLeftAnimation()
     {
+        scrollRect.vertical = true;
+        scrollRect.horizontal = true;
         while (scrollRect.horizontalNormalizedPosition < 1)
         {
             scrollRect.horizontalNormalizedPosition += 0.05f;
@@ -50,5 +55,6 @@ public class AccountView : MonoBehaviour
         }
         mainMenuCanvas.sortingOrder = 1;
         accountSettingsCanvas.sortingOrder = 0;
+        scrollRect.horizontal = false;
     }
 }
