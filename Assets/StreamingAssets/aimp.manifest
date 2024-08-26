@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 3505351583
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 89cce87762360f8507e49a9fc4749cd9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 89cce87762360f8507e49a9fc4749cd9
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Apps/AIMP/Screenshot 1.png
+- Assets/Art/Apps/AIMP/Icon.png
+- Assets/Art/Apps/AIMP/Screenshot 3.png
+- Assets/Art/Apps/AIMP/Screenshot 4.jpg
+- Assets/Art/Apps/AIMP/Screenshot 2.jpg
+Dependencies: []

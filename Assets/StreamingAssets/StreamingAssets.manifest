@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 1082483664
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: aimp
+      Dependencies: {}
+    Info_1:
+      Name: aliexpress
+      Dependencies: {}
+    Info_2:
+      Name: block blast!
+      Dependencies: {}
+    Info_3:
+      Name: dungeon defense
+      Dependencies: {}
+    Info_4:
+      Name: roblox
+      Dependencies: {}
+    Info_5:
+      Name: terraria
+      Dependencies: {}

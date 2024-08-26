@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 2840869542
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 59055614a701c0609519feb752a3122f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 59055614a701c0609519feb752a3122f
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Games/Dungeon Defense/Screenshot 4.jpg
+- Assets/Art/Games/Dungeon Defense/Screenshot 1.jpg
+- Assets/Art/Games/Dungeon Defense/Icon.png
+- Assets/Art/Games/Dungeon Defense/Screenshot 2.jpg
+- Assets/Art/Games/Dungeon Defense/Screenshot 3.jpg
+Dependencies: []

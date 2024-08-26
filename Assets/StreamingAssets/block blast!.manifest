@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 3622653503
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 09c7fc0c2d3d5469b31f0f7cd368a060
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 09c7fc0c2d3d5469b31f0f7cd368a060
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Games/Block Blast!/Screenshot 2.jpeg
+- Assets/Art/Games/Block Blast!/Screenshot 3.jpg
+- Assets/Art/Games/Block Blast!/Icon.jpg
+- Assets/Art/Games/Block Blast!/Screenshot 1.jpg
+- Assets/Art/Games/Block Blast!/Screenshot 4.jpg
+Dependencies: []

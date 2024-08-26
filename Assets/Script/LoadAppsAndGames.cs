@@ -1,30 +1,72 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadAppsAndGames : MonoBehaviour
 {
+    public GameObject gamesMainWindow;
+    public GameObject appsMainWindow;
+    public GameObject categoriesContent;
     public GameObject[] gamesCategoriesContents;
     public GameObject[] appsCategoriesContents;
-    private GameObject[] _apps;
+    private bool _isApps = true;
+    private Button[] _apps;
     private AppsParams[] _appsParam;
-    private GameObject[] _games;
+    private Button[] _games;
     private AppsParams[] _gamesParam;
+    private LoadAssetBundleOnClick onClickEvent;
 
     private void Awake()
     {
         LoadAppsAndGamesFromResources();
+        onClickEvent = GetComponent<LoadAssetBundleOnClick>();
     }
     private void Start()
     {
-        LoadAppsInContent();
-        LoadGamesInContent();
+        for (int i = 0; i < appsCategoriesContents.Length; i++)
+        {
+            LoadAppsInContent(appsCategoriesContents[i].name, appsCategoriesContents[i]);
+        }
+        for (int i = 0; i < gamesCategoriesContents.Length; i++)
+        {
+            LoadGamesInContent(gamesCategoriesContents[i].name, gamesCategoriesContents[i]);
+        }
+
+    }
+    public void TypeOfApp(bool type)
+    {
+        _isApps = type;
+    }
+    public void GetAppsAndGamesCategories(GameObject categoryName)
+    {
+        if (_isApps)
+        {
+            LoadAppsInContent(categoryName.name, categoriesContent);
+        }
+        else
+        {
+            LoadGamesInContent(categoryName.name, categoriesContent);
+        }
+    }
+    public void LoadMainWindow()
+    {
+        if (_isApps)
+        {
+            appsMainWindow.SetActive(true);
+        }
+        else
+        {
+            gamesMainWindow.SetActive(true);
+        }
+        Debug.LogError("Buttons");
     }
     private void LoadAppsAndGamesFromResources()
     {
         // Load Apps and initialize the arrays
-        _apps = Resources.LoadAll<GameObject>("Apps");
+        _apps = Resources.LoadAll<Button>("Apps");
         _appsParam = new AppsParams[_apps.Length];
 
         for (int i = 0; i < _apps.Length; i++)
@@ -33,7 +75,7 @@ public class LoadAppsAndGames : MonoBehaviour
         }
 
         // Load Games and initialize the arrays
-        _games = Resources.LoadAll<GameObject>("Games");
+        _games = Resources.LoadAll<Button>("Games");
         _gamesParam = new AppsParams[_games.Length];
 
         for (int i = 0; i < _games.Length; i++)
@@ -41,51 +83,48 @@ public class LoadAppsAndGames : MonoBehaviour
             _gamesParam[i] = _games[i].GetComponent<AppsParams>();
         }
     }
-    private void LoadAppsInContent()
+    private void ClearAllChildren(GameObject parent)
     {
-        for (int i = 0; i < appsCategoriesContents.Length; i++)
+        foreach (Transform child in parent.transform)
         {
-            string categoryName = appsCategoriesContents[i].name;
-
-            for (int j = 0; j < _apps.Length; j++)
+            GameObject.Destroy(child.gameObject);
+        }
+    }
+    private void LoadAppsInContent(string categoryName, GameObject parent)
+    {
+        ClearAllChildren(parent);
+        for (int j = 0; j < _apps.Length; j++)
+        {
+            AppsParams appsParam = _appsParam[j];
+            foreach (var appsType in appsParam.appsType)
             {
-                AppsParams appsParam = _appsParam[j];
-
-                foreach (var appsType in appsParam.appsType)
+                if (appsType.ToString() == categoryName)
                 {
-                    if (appsType.ToString() == categoryName)
-                    {
-                        GetParentForObject(_apps[j], appsCategoriesContents[i]);
-                        break;
-                    }
+                    GetParentForObject(_apps[j], parent);
+                    break;
                 }
             }
         }
     }
-    private void LoadGamesInContent()
+    private void LoadGamesInContent(string categoryName, GameObject parent)
     {
-        for (int i = 0; i < gamesCategoriesContents.Length; i++)
+        ClearAllChildren(parent);
+        for (int j = 0; j < _games.Length; j++)
         {
-            string categoryName = gamesCategoriesContents[i].name;
-
-            for (int j = 0; j < _games.Length; j++)
+            AppsParams gameParam = _gamesParam[j];
+            foreach (var gameType in gameParam.appsType)
             {
-                AppsParams gameParam = _gamesParam[j];
-
-                foreach (var gameType in gameParam.appsType)
+                if (gameType.ToString() == categoryName)
                 {
-                    if (gameType.ToString() == categoryName)
-                    {
-                        GetParentForObject(_games[j], gamesCategoriesContents[i]);
-                        break;
-                    }
+                    GetParentForObject(_games[j], parent);
+                    break;
                 }
             }
         }
     }
-    private void GetParentForObject(GameObject obj, GameObject parent)
+    private void GetParentForObject(Button obj, GameObject parent)
     {
-        GameObject instance = Instantiate(obj, Vector2.zero, Quaternion.identity);
+        GameObject instance = Instantiate(obj.gameObject, Vector2.zero, Quaternion.identity);
         instance.transform.SetParent(parent.transform, false);
     }
 }

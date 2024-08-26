@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 3710251365
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 28e15ce962e6968f43bc4554489cca36
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 28e15ce962e6968f43bc4554489cca36
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Games/Terraria/Screenshot 1.jpg
+- Assets/Art/Games/Terraria/Screenshot 2.jpg
+- Assets/Art/Games/Terraria/Icon.png
+- Assets/Art/Games/Terraria/Screenshot 4.jpg
+- Assets/Art/Games/Terraria/Screenshot 3.png
+Dependencies: []

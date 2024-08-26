@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 1226426670
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 13d0c59ea2e13a1cea827b3db0b9f8e8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 13d0c59ea2e13a1cea827b3db0b9f8e8
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Games/Roblox/Screenshot 2.png
+- Assets/Art/Games/Roblox/Screenshot 3.jpg
+- Assets/Art/Games/Roblox/Screenshot 1.png
+- Assets/Art/Games/Roblox/Screenshot 4.jpg
+- Assets/Art/Games/Roblox/Icon.png
+Dependencies: []
