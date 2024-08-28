@@ -6,6 +6,8 @@ using TMPro;
 
 public class LoadAssetBundleOnClick : MonoBehaviour
 {
+    [HideInInspector]
+    public string buttonName;
     public Transform content;
     public Image icon;
     public TextMeshProUGUI title;
@@ -20,13 +22,21 @@ public class LoadAssetBundleOnClick : MonoBehaviour
             _targetImages[i] = content.GetChild(i).GetComponent<Image>();
         }
     }
-    public void OnButtonClick(Button button)
+
+    public void OnButtonClick()
     {
-        string bundleName = button.name;
+        string bundleName = buttonName;
         StartCoroutine(LoadAssetBundle(bundleName));
         appsCanvas.SetActive(true);
     }
-
+    public void ClearAllImages()
+    {
+        icon.sprite = null;
+        for(int i = 0; i < _targetImages.Length; i++)
+        {
+            _targetImages[i].sprite = null;
+        }
+    }
     private IEnumerator LoadAssetBundle(string bundleName)
     {
         string path = System.IO.Path.Combine(Application.streamingAssetsPath, bundleName);

@@ -36,6 +36,7 @@ public class LoadAppsAndGames : MonoBehaviour
         }
 
     }
+
     public void TypeOfApp(bool type)
     {
         _isApps = type;
@@ -65,7 +66,6 @@ public class LoadAppsAndGames : MonoBehaviour
     }
     private void LoadAppsAndGamesFromResources()
     {
-        // Load Apps and initialize the arrays
         _apps = Resources.LoadAll<Button>("Apps");
         _appsParam = new AppsParams[_apps.Length];
 
@@ -74,7 +74,6 @@ public class LoadAppsAndGames : MonoBehaviour
             _appsParam[i] = _apps[i].GetComponent<AppsParams>();
         }
 
-        // Load Games and initialize the arrays
         _games = Resources.LoadAll<Button>("Games");
         _gamesParam = new AppsParams[_games.Length];
 
@@ -125,6 +124,7 @@ public class LoadAppsAndGames : MonoBehaviour
     private void GetParentForObject(Button obj, GameObject parent)
     {
         GameObject instance = Instantiate(obj.gameObject, Vector2.zero, Quaternion.identity);
+        instance.gameObject.name = obj.name;
         instance.transform.SetParent(parent.transform, false);
     }
 }

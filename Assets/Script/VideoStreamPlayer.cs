@@ -12,12 +12,14 @@ public class VideoStreamPlayer : MonoBehaviour, IPointerClickHandler
     {
         rawImage.gameObject.SetActive(false);
     }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         PrepareVideo();
         PlayOrPauseVideo();
         
     }
+
     private void PrepareVideo()
     {
         rawImage.gameObject.SetActive(true);

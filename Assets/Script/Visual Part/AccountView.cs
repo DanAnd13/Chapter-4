@@ -21,6 +21,7 @@ public class AccountView : MonoBehaviour
         scrollToRight.onClick.AddListener(ScrollToRight);
         scrollToLeft.onClick.AddListener(ScrollToLeft);
     }
+
    private void ScrollToRight()
     {
         StartCoroutine(ScrollToRightAnimation());

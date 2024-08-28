@@ -90,8 +90,9 @@ GameObject:
   - component: {fileID: 856366708021386870}
   - component: {fileID: 856366708021386871}
   - component: {fileID: 430201026457759828}
+  - component: {fileID: 1393040691871650649}
   m_Layer: 5
-  m_Name: Block Blust!
+  m_Name: Block Blast!
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,13 +202,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadAssetBundleOnClick, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 2
+      - m_Target: {fileID: 1393040691871650649}
+        m_TargetAssemblyTypeName: OnClickEvent, Assembly-CSharp
+        m_MethodName: GetOnClickEvent
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 856366708021386866}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -239,6 +240,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appsType: 02000000080000000900000006000000070000000b000000
+--- !u!114 &1393040691871650649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856366708021386866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476c0cfb4aa196041a79aef06b62faaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &856366708540209595
 GameObject:
   m_ObjectHideFlags: 0
